@@ -283,14 +283,14 @@ function robotAnswer(topic){
     case "password":return state.noteTaken?"제 보관함에서 찾은 쪽지를 건네드렸어요. 적힌 번호는 소지품에서 다시 확인할 수 있습니다.":state.noteFound?"제 보관함 안에서 관리용 쪽지를 찾았습니다. 아직 가져가지 않으셨네요.":"아직 비밀번호가 적힌 쪽지는 보지 못했습니다. 확인하지 않은 번호를 답할 수는 없어요.";
     case "limits":return state.noteFound?"쪽지가 제 보관함에 있어도, 안을 확인하기 전에는 무엇인지 몰랐어요. AI도 확인한 정보가 있어야 답할 수 있습니다.":"저도 확인하지 않은 정보는 모릅니다. 함께 찾아보고 확인하면 더 정확하게 답할 수 있어요.";
     case "belongings":return state.noteTaken?"보관함에서 찾은 쪽지는 건네드렸습니다. 지금은 보관함이 비어 있어요.":state.noteFound?"제 보관함에 관리용 쪽지가 들어 있었습니다. 확인해 보니 알게 됐어요.":"가슴 아래에 작은 보관함이 있어요. 안에 무엇이 있는지는 아직 확인하지 않았습니다.";
-    default:return state.noteTaken?"쪽지는 건네드렸습니다. 소지품에서 다시 볼 수 있어요.":state.noteFound?"제 보관함에 들어 있었습니다. 확인하기 전에는 몰랐네요.":"궁금한 것이 있나요? 함께 알아볼게요.";
+    default:return state.noteTaken?"쪽지는 건네드렸습니다. 소지품에서 다시 볼 수 있어요.":state.noteFound?"이런 게 들어 있네요.":"궁금한 것이 있나요? 함께 알아볼게요.";
   }
 }
 function robot(topic="") {
   if(topic&&!Object.hasOwn(robotQuestions,topic))return;
   const topics=["identity","where","exit",...(state.guide||state.noteFound?["password","limits"]:[]),"belongings"];
   const art=`<div class="robot-detail${state.noteFound&&!state.noteTaken?" found":""}" role="img" aria-label="B-0와 가슴 아래 보관함"><div class="robot-sprite">${state.noteFound&&!state.noteTaken?"":spriteFace()}</div></div>`;
-  const action=state.noteTaken?btn("비밀번호 쪽지 보기","note","primary wide"):state.noteFound?btn("쪽지 받기","take-note","primary wide"):topic==="belongings"?btn("네 보관함을 살펴봐도 돼?","ask-storage","primary wide"):"";
+  const action=state.noteTaken?btn("비밀번호 쪽지 보기","note","primary wide"):state.noteFound?btn("확인하기","take-note","primary wide"):topic==="belongings"?btn("네 보관함을 살펴봐도 돼?","ask-storage","primary wide"):"";
   modal("B-0와 대화",`${art}<div class="conversation-reply" aria-live="polite">${topic?dialogue("student",robotQuestions[topic]):""}${dialogue("robot",robotAnswer(topic))}</div>${action}<section class="question-panel" aria-label="B-0에게 물어볼 질문"><p>무엇을 물어볼까?</p><div class="question-choices">${topics.filter(t=>t!==topic).map(t=>btn(robotQuestions[t],"talk-"+t,"secondary")).join("")}</div></section>`,"conversation-modal");
 }
 function askStorage() { modal("B-0의 보관함",`${dialogue("student",state.guide?"네 보관함도 확인해 볼까?":"몸에 보관함이 있네. 안에 뭐가 있어?")}${dialogue("robot","안쪽은 아직 확인하지 않았습니다. 열어 보겠습니다.")}<div class="robot-detail thinking" aria-hidden="true"><div class="robot-sprite">${spriteFace("thinking")}</div></div>${btn("보관함 열어 보기","open-storage","primary wide")}`); }
