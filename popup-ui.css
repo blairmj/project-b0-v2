@@ -1,0 +1,31 @@
+/* Shared floating HUD treatment for every room's native dialog. */
+:root{--b0-dialog-bg:rgba(4,13,21,.88);--b0-dialog-ink:#f1fcff;--b0-dialog-line:#d3edff40;--b0-dialog-corners:linear-gradient(#e1f8ff,#e1f8ff) left top/22px 2px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) left top/2px 22px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) right top/22px 2px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) right top/2px 22px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) left bottom/22px 2px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) left bottom/2px 22px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) right bottom/22px 2px no-repeat,linear-gradient(#e1f8ff,#e1f8ff) right bottom/2px 22px no-repeat}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal){padding:5px;max-height:90dvh;color:var(--b0-dialog-ink);background:var(--b0-dialog-corners),var(--b0-dialog-bg);background-origin:padding-box;border:0;border-radius:0;box-shadow:none;font-family:'B0 Digital',monospace;font-weight:400;text-shadow:0 1px 3px #000b;overflow:hidden}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)::backdrop{background:#02081030}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)[open]{display:flex;flex-direction:column}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)>:is(header,.modal-header){position:relative;top:auto;height:auto;min-height:60px;margin:0;padding:10px 13px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:transparent;border:0;border-bottom:1px solid var(--b0-dialog-line);pointer-events:auto}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) h2{display:block;margin:0;font-size:22px;line-height:1.4;font-weight:400;color:var(--b0-dialog-ink)}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)>:is(.modal-body,.c4-modal-content,.lab-modal-body,.b0-modal-body,.choice-modal-body){padding:16px 13px;max-height:calc(90dvh - 90px);min-height:0;overflow:auto;overscroll-behavior:contain;font:15px/1.65 'B0 Digital',monospace}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)>:is(header,.modal-header){flex-shrink:0}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) :is(button,input,select,textarea,h2,h3,p,small,strong,label,summary,li){font-family:'B0 Digital',monospace}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) button{background:#071521b0;color:#eafaff;border:1px solid #c9e7f860;border-radius:2px;min-height:44px;font-size:14px;font-weight:400;text-shadow:0 1px 3px #000b}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) button:hover{background:#22465bc9;border-color:#dbf4ff}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) button:focus-visible{outline:2px solid #d9f8ff;outline-offset:2px}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) button:disabled{opacity:.4}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) .primary{background:#174b60d9;border-color:#bceaf5}
+#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) .keypad input{background:#06121de6;color:#e3faff;border-radius:2px}
+#app .c4-modal .c4-plug{background:linear-gradient(#adab91,#536a65)}
+/* The map title itself is the popup title; its close control floats inside. */
+#app :is(.modal,.lab-modal,.b0-common-modal,.choice-modal):has(.map-status-window)>:is(header,.modal-header){position:sticky;top:11px;z-index:5;min-height:0;height:0;margin:0 11px 0 0;padding:0;justify-content:flex-end;align-items:flex-start;border:0;pointer-events:none}
+#app :is(.modal,.lab-modal,.b0-common-modal,.choice-modal):has(.map-status-window)>:is(header,.modal-header) h2{display:none}
+#app :is(.modal,.lab-modal,.b0-common-modal,.choice-modal):has(.map-status-window)>:is(header,.modal-header) button{pointer-events:auto;margin:0}
+#app :is(.modal,.lab-modal,.b0-common-modal,.choice-modal):has(.map-status-window)>:is(.modal-body,.lab-modal-body,.b0-modal-body,.choice-modal-body){max-height:calc(90dvh - 10px);padding:11px}
+#app dialog .lab-map.map-status-window{padding:0;background:transparent;border:0;box-shadow:none}
+#app dialog .map-status-window:before{display:none}
+#app dialog .map-status-title{min-height:52px;padding-right:78px}
+#app dialog .map-status-code{display:none}
+#app dialog .map-preview{margin-bottom:14px}
+/* B-0 uses the same speech color in rooms and in the corridor. */
+#app .speech.robot p{color:#123548;background:#b9e8f6;border:0;border-top-right-radius:2px;text-shadow:none}
+@media(max-width:420px){#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal) h2{font-size:20px}#app :is(.modal,.c4-modal,.lab-modal,.b0-common-modal,.choice-modal)>:is(.modal-body,.c4-modal-content,.lab-modal-body,.b0-modal-body,.choice-modal-body){font-size:14px}}
+

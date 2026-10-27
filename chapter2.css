@@ -1,0 +1,122 @@
+/* A small physical room: one material, shared camera, actual box positions. */
+.c2-game{max-width:760px;background:#0b141d;isolation:isolate}
+.c2-game>header h1{font-size:13px;font-weight:500}
+.c2-stage{position:relative;flex:1;min-height:280px;overflow:clip;perspective-origin:50% 50%;touch-action:none;user-select:none;background:#182532;cursor:grab;isolation:isolate}
+.c2-world{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.c2-wall,.c2-floor,.c2-ceiling{position:absolute;background:#566575 url('./assets/chapter2-metal-v1.webp') 0 0/300px 300px;backface-visibility:hidden;box-sizing:border-box}
+.c2-wall{width:600px;height:420px;left:-300px;top:-240px;border:7px solid #263442;box-shadow:inset 0 0 65px #08121b88;transform-style:preserve-3d}
+.c2-wall-front{transform:translateZ(-300px)}
+.c2-wall-back{transform:rotateY(180deg) translateZ(-300px)}
+.c2-wall-left{transform:rotateY(90deg) translateZ(-300px)}
+.c2-wall-right{transform:rotateY(-90deg) translateZ(-300px)}
+.c2-floor{width:600px;height:600px;left:-300px;top:-300px;transform:translateY(180px) rotateX(90deg);background-color:#33424a;box-shadow:inset 0 0 100px #0c1b2f99;border:4px solid #263442}
+.c2-ceiling{width:600px;height:600px;left:-300px;top:-300px;transform:translateY(-240px) rotateX(-90deg);filter:brightness(.55)}
+.c2-light{position:absolute;width:170px;height:12px;top:23px;left:205px;background:#cae8ec;border:4px solid #293b49;box-shadow:0 2px 13px #c1f0ff80}
+.c2-object{position:absolute;min-height:0;border-radius:0;padding:0;backface-visibility:hidden;touch-action:none;transform-style:preserve-3d}
+/* Filters flatten 3D children and shift an open lid's visible/clickable plane. */
+.c2-object:hover{filter:none}
+.c2-object:focus-visible,.c2-cube:focus-visible,.c2-robot:focus-visible,.c2-cabinet:focus-visible{outline:2px solid #e2debf;outline-offset:4px}
+.c2-entry{width:125px;height:220px;left:-62px;top:-40px;transform:rotateY(180deg) translateZ(-297px);background:#495560 url('./assets/chapter2-metal-v1.webp') center/250px;border:10px solid #26313c;box-shadow:inset 0 0 0 3px #778390,inset 0 0 20px #101c2d}
+.c2-entry span{display:block;width:2px;height:100%;margin:auto;background:#1a2734}
+.c2-window{width:145px;height:108px;left:32px;top:-205px;transform:translateZ(-296px);border:9px solid #273947;box-shadow:0 0 0 3px #a3acb0,inset 0 0 12px #000;background:#7194a1;overflow:visible}
+.c2-window-glass{position:absolute;inset:0;background:linear-gradient(140deg,#adcad529,#1d364d55),url('./assets/lab-corridor-v1.webp') center 40%/cover;box-shadow:inset 0 0 0 3px #8099a5;transform-origin:top;transition:transform .65s,opacity .65s}
+.c2-window-glass:after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 20%,#bddfe725 22%,transparent 25%,transparent 55%,#daeaf525 57%,transparent 65%)}
+.c2-latch{position:absolute;bottom:3px;left:55px;width:23px;height:6px;background:#c1c9c9;border:2px solid #4b5b62;box-shadow:0 2px 3px #000}
+.c2-window.open{background:#526c79 url('./assets/lab-corridor-v1.webp') center/cover}
+.c2-window.open .c2-window-glass{transform:rotateX(105deg);opacity:.35}
+.c2-window.open .c2-latch{transform:rotate(90deg)}
+.c2-fake-window{left:-72px;top:-110px;transform:rotateY(-90deg) translateZ(-296px);background:#69747a url('./assets/chapter2-metal-v1.webp') center/160px;box-shadow:0 0 0 3px #a3acb0,inset 0 0 0 7px #26333d}
+.c2-fake-window .c2-window-glass{background:linear-gradient(135deg,#abc6cdcc,#405c70ee);transform-origin:left}
+.c2-fake-window.open{background:#4a5661 url('./assets/chapter2-metal-v1.webp') center/160px;box-shadow:0 0 0 3px #a3acb0,inset 0 0 24px 8px #142431}
+.c2-fake-window.open .c2-window-glass{transform:rotateY(-100deg);opacity:1}
+.c2-vent{width:130px;height:116px;left:-65px;top:-43px;transform:rotateY(90deg) translateZ(-296px);background:#18232c;border:6px solid #364653;box-shadow:0 0 0 2px #8a969c}
+.c2-vent-inside{position:absolute;inset:5px;background:#46505a url('./assets/chapter2-metal-v1.webp') center/180px;box-shadow:inset 0 0 30px 12px #0009}
+.c2-vent-inside:after{content:'';position:absolute;inset:15px;background:repeating-linear-gradient(35deg,#687179 0 13px,#38434c 14px 17px);border:5px solid #29353f;box-shadow:inset 0 0 10px #000}
+.c2-vent-lid{position:absolute;inset:0;background:#687681 url('./assets/chapter2-metal-v1.webp') center/210px;padding:14px 8px;transform-origin:left;transition:transform .6s;backface-visibility:visible}
+.c2-vent-lid i{display:block;height:6px;background:#162631;box-shadow:0 1px 0 #bdc4c4;margin-bottom:8px}
+.c2-vent.open .c2-vent-lid{transform:rotateY(-110deg)}
+.c2-cube{position:absolute;left:0;top:0;transform-style:preserve-3d;touch-action:none;cursor:grab}
+.c2-cube:active{cursor:grabbing}
+.c2-face{position:absolute;border:3px solid #202d36;background:#716e61 url('./assets/chapter2-metal-v1.webp') center/165px;box-sizing:border-box;backface-visibility:hidden;box-shadow:inset 0 0 0 2px #a5aa9b,inset 0 0 15px #26313b88}
+.c2-front,.c2-back{width:var(--w);height:var(--h)}
+.c2-front{transform:translateZ(calc(var(--d)/2))}
+.c2-back{transform:rotateY(180deg) translateZ(calc(var(--d)/2));filter:brightness(.65)}
+.c2-left,.c2-right{width:var(--d);height:var(--h);left:calc((var(--w) - var(--d))/2)}
+.c2-left{transform:rotateY(-90deg) translateZ(calc(var(--w)/2));filter:brightness(.72)}
+.c2-right{transform:rotateY(90deg) translateZ(calc(var(--w)/2));filter:brightness(.87)}
+.c2-top{width:var(--w);height:var(--d);top:calc((var(--h) - var(--d))/2);transform:rotateX(90deg) translateZ(calc(var(--h)/2));filter:brightness(1.13)}
+.c2-face:before,.c2-face:after{content:'';position:absolute;top:0;bottom:0;width:8px;background:#39454b;box-shadow:inset 1px 0 #aab0ac,inset -2px 0 #1c2831}
+.c2-face:before{left:9px}.c2-face:after{right:9px}
+.c2-front i,.c2-back i{position:absolute;left:calc(50% - 14px);top:45%;width:28px;height:9px;border:3px solid #273740;border-radius:3px;box-shadow:0 1px #adb3af;background:#172a36}
+.c2-small .c2-face{background-color:#83715c;background-blend-mode:luminosity}
+.c2-wide .c2-face{background-color:#52676c;background-blend-mode:luminosity}
+.c2-cube.selected>.c2-face{border-color:#c2c9ba}
+.c2-cube.unstable .c2-front{animation:c2-box-shift .6s ease 1}
+@keyframes c2-box-shift{25%{translate:3px 0}75%{translate:-2px 0}}
+.c2-cabinet{position:absolute;width:85px;height:148px;transform:translate3d(198px,32px,220px) rotateY(-90deg);transform-style:preserve-3d;cursor:pointer}
+.c2-cabinet .c2-front{background:#111e28;box-shadow:inset 0 -42px 0 -40px #84929a,inset 0 -85px 0 -83px #84929a}
+.c2-cabinet-door{position:absolute;inset:0;transform:translateZ(32px);transform-origin:left;background:#596873 url('./assets/chapter2-metal-v1.webp') center/180px;border:4px solid #2e3c49;transition:transform .6s}
+.c2-cabinet-door:after{content:'';position:absolute;right:9px;top:55px;width:5px;height:25px;background:#1f2c37;border:1px solid #9da8ad}
+.c2-cabinet.open .c2-cabinet-door{transform:translateZ(32px) rotateY(-105deg)}
+.c2-robot{position:absolute;left:0;top:0;width:96px;height:156px;transform-style:preserve-3d;cursor:pointer;touch-action:none}
+.c2-robot>.robot-sprite{inset:0;width:100%;height:100%;aspect-ratio:auto;background:none!important;transform:none;filter:drop-shadow(0 5px 4px #08111e88)}
+.c2-robot.holding>.robot-sprite{background:url('./assets/b0-bracing-v1.webp') center/contain no-repeat!important;rotate:0deg}
+.c2-robot.holding .live-portrait{visibility:hidden}
+.c2-robot.holding .c2-support-arm{display:none}
+.c2-robot.boosting>.robot-sprite{background:url('./assets/b0-bracing-v1.webp') center/contain no-repeat!important;rotate:-8deg;transform-origin:50% 100%;transition:rotate .6s}
+.c2-robot.boosting .live-portrait{visibility:hidden}
+.c2-support-arm{position:absolute;width:46px;height:11px;right:-23px;top:94px;background:linear-gradient(#e5e0cf,#90978e);border:2px solid #263a47;border-radius:9px;transform:rotate(-12deg);box-shadow:18px 0 0 -2px #475e66}
+.c2-robot.reaching>.robot-sprite{background:none!important;width:384px;height:624px;transform:scale(.25);transform-origin:0 0;filter:none}
+.c2-robot.reaching>.robot-sprite:before,.c2-robot.reaching>.robot-sprite:after{content:'';position:absolute;inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
+.c2-robot.reaching>.robot-sprite:before{background-image:url('./assets/b0-rescue-reach-v1.webp');opacity:calc(1 - var(--rescue-climb,0))}
+.c2-robot.reaching>.robot-sprite:after{background-image:url('./assets/b0-rescue-climb-v1.webp');opacity:var(--rescue-climb,0)}
+.c2-robot.reaching .live-portrait{visibility:hidden}
+.c2-robot.reaching .c2-support-arm{display:none}
+.c2-robot.hand-held>.robot-sprite:before,.c2-robot.hand-held>.robot-sprite:after{clip-path:polygon(0 32%,36% 32%,36% 20%,62% 20%,62% 0,100% 0,100% 100%,0 100%)}
+.c2-player-grip{position:absolute;width:0;height:0;z-index:3;pointer-events:none;transform-origin:0 0}
+.c2-player-arm{position:absolute;box-sizing:border-box;border-style:solid;border-color:transparent;border-width:0;border-image-source:url('./assets/player-rescue-reach-v1.webp');border-image-slice:800 0 200 0 fill;border-image-repeat:stretch;pointer-events:none}
+.c2-player-grip.clasped .c2-player-arm{border-image-source:url('./assets/player-rescue-grip-v1.webp')}
+.c2-sill{position:absolute;left:0;right:0;bottom:-2px;height:65px;pointer-events:none;background:#596a75 url('./assets/chapter2-metal-v1.webp') center/300px;border-top:8px solid #a9b7b9;box-shadow:0 -10px 20px #07152180;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);z-index:2}
+.c2-ledge-game .c2-speech{bottom:78px;z-index:4}
+.c2-ledge-game .c2-stage{cursor:default}
+.c2-ledge-game .c2-stage:after{content:'';position:absolute;inset:0;background:#0a1520;opacity:var(--rescue-fade,0);pointer-events:none;z-index:6}
+.c2-ledge-game [data-object="window"]{visibility:hidden;pointer-events:none}
+.c2-ledge-game .c2-actions button{min-width:210px;background:#b9e8f6;color:#173746;font-weight:600}
+.c2-ledge-game footer{justify-content:center;font-size:12px;color:#b5c8d6}
+.c2-robot.walking .robot-sprite{animation:c2-step .32s alternate infinite}
+@keyframes c2-step{to{translate:0 -3px;rotate:2deg}}
+.c2-floor-target{position:absolute;width:90px;height:90px;left:0;top:-45px;border:2px solid #c8dfd1;background:#b2dfd426;pointer-events:none}
+.c2-floor-target.invalid{border-color:#e9ab90;background:#c7765d33}
+.c2-moving-object{cursor:crosshair}
+.c2-basic-help{position:absolute;left:14px;right:14px;bottom:12px;pointer-events:none;text-align:center;color:#e0e7e8;background:#11202bba;border-radius:4px;font-size:11px;padding:7px}
+.c2-speech{position:absolute;left:12px;right:12px;bottom:12px;pointer-events:none;z-index:4;display:flex;align-items:end;gap:5px}
+.c2-speech .speech{pointer-events:none;max-width:85%}.c2-speech>button{pointer-events:auto;background:#183344e8;min-height:36px;padding:6px 9px}
+.c2-speech:has(.robot){justify-content:flex-end}.c2-speech .speech p{font-size:13px;padding:10px 13px}
+.c2-actions{position:relative;z-index:7;flex:none;min-height:86px;background:#142330;border-top:1px solid #354a59;padding:10px 14px}
+.c2-actions>strong,.c2-actions>p{display:block;font-size:12px;font-weight:500;color:#bdced9;margin:0 0 7px}
+.c2-actions>div{display:flex;gap:6px;flex-wrap:wrap}
+.c2-actions button{font-size:12px;padding:7px 11px;min-height:40px;background:#233b4a}
+.c2-game>footer{min-height:60px;padding:7px 14px;border-top:1px solid #2d4250}
+.c2-game>footer{gap:6px;flex-wrap:wrap}
+.c2-descend{font-size:12px;min-height:40px;padding:7px 10px}
+.c2-descend[hidden]{display:none}
+.c2-game .zoom-controls button{width:40px;min-height:40px;padding:5px}
+.c2-game .zoom-controls output{font-size:11px;min-width:40px;text-align:center}
+.c2-modal .modal-body>p{margin-bottom:14px}.c2-modal button{margin:4px 0}
+.c2-outside{position:relative;flex:1;overflow:hidden;min-height:380px;background:#142434 url('./assets/lab-corridor-v1.webp') center/cover}
+.c2-ending .c2-outside{animation:c2-arrive .7s ease-out both}
+@keyframes c2-arrive{from{opacity:0}to{opacity:1}}
+.c2-outside:after{content:'';position:absolute;inset:55% 0 0;pointer-events:none;background:linear-gradient(transparent,#0d1c29)}
+.c2-ending-b0{position:absolute;left:52%;bottom:-12%;width:42%;height:62%;transform:scale(.7);transition:transform 1s,bottom 1s}
+.c2-outside.together .c2-ending-b0{bottom:15%;transform:scale(1)}
+.c2-outside.pulling .c2-ending-b0{bottom:15%;transform:scale(1)}
+.c2-end-dialogue{position:absolute;bottom:22px;left:20px;right:20px;z-index:2;display:grid;gap:18px}
+.c2-ending{max-width:760px}.c2-ending>header h1{font-size:13px}
+@media(max-width:420px){.c2-game>header{padding:7px 9px}.c2-game>header h1{font-size:12px}.c2-actions{padding:8px 10px}.c2-actions button{font-size:11px;padding:7px 9px}.c2-game>footer{padding:6px 10px}.c2-game .quiet{padding:8px;font-size:11px}}
+@media(max-height:650px){.c2-game{height:100dvh;min-height:0}.c2-stage{min-height:170px}.c2-actions{min-height:76px}}
+@media(prefers-reduced-motion:reduce){.c2-world,.c2-window-glass,.c2-cabinet-door,.c2-vent-lid{transition:none}.c2-robot.walking .robot-sprite{animation:none}}
+
+/* Dialogue and controls always paint above the companion. */
+.c2-ending .c2-outside{isolation:isolate}
+.c2-ending-b0{z-index:1;isolation:isolate;pointer-events:none}
+.c2-end-dialogue{z-index:6}

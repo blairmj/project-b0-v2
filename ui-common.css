@@ -1,0 +1,39 @@
+/* Shared room chrome. Scene artwork, world geometry and puzzle hit areas are untouched. */
+#app>main.game,#app>main.awakening{max-width:760px;width:100%;box-sizing:border-box}
+.game>header.b0-hud,.awakening>.b0-hud{display:flex;flex-direction:column;flex-wrap:nowrap;gap:0;flex:none;min-height:105px;height:105px;width:100%;padding:0 12px;background:#101e2b;border-bottom:1px solid #405766;position:relative;z-index:20;box-sizing:border-box}
+.b0-hud-main,.b0-hud-tools{flex:0 0 52px;box-sizing:border-box}
+.awakening>.b0-hud{position:absolute;left:0;right:0;top:0}
+.b0-hud-main{height:52px;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-width:0}
+.b0-hud-main h1,.b0-hud-main .lab-location{margin:0;font-size:13px;font-weight:500;color:#c4d8e3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.game>.b0-hud nav,.awakening>.b0-hud nav{display:flex;align-items:center;gap:5px;flex-wrap:nowrap;margin:0;flex:none}
+.b0-hud .zoom-controls{display:flex;align-items:center;gap:4px;padding:0;background:transparent;border:0}
+.b0-hud .zoom-controls output,.b0-hud .zoom-controls [hidden]{display:none!important}
+.game>.b0-hud button,.awakening>.b0-hud button{min-height:44px;height:44px;border:1px solid #60798a;border-radius:8px;background:#193243;color:#edf5f8;font-size:12px;line-height:1.2;box-sizing:border-box;padding:6px 10px;white-space:nowrap}
+.b0-hud .zoom-controls button{width:44px;padding:0!important;font-size:21px!important}
+.game>.b0-hud button,.awakening>.b0-hud button{margin:0;max-width:none}
+.b0-hud-tools>button{width:100%}
+.b0-hud-tools{display:grid;grid-template-columns:92px minmax(0,1fr) minmax(0,1fr);gap:6px;align-items:center;height:52px;width:100%}
+.b0-hud .lesson-review-controls{display:contents}
+.game>.b0-hud .lesson-jump,.awakening>.b0-hud .lesson-jump{min-width:0;width:100%;font-size:11px!important;min-height:44px;padding:6px 4px!important;border-style:dashed}
+.b0-hud button:disabled{opacity:.35}
+.look-hint,.c2-basic-help{display:none!important}
+.game>footer{min-height:66px;padding:10px 12px;gap:8px;align-items:center;box-sizing:border-box}
+.game>footer button{min-height:44px;font-size:13px;border-radius:8px}
+.game>footer>.zoom-controls{display:none!important}
+.game>footer>[data-c2=robot],.game>footer>[data-c3=robot],.game>footer>[data-mr=robot],.game>footer>[data-c4=robot],.game>footer>[data-action="talk-"],.game>footer>[data-lab=robot]{margin-right:auto}
+.game>footer>[data-ui=inventory],.game>footer>[data-action=inventory],.lab-pocket{margin-left:auto}
+.c2-game>footer>[data-c2=robot]{order:0}.c2-game>footer>[data-c2=down]{order:1}.c2-game>footer>[data-ui=inventory]{order:2}
+.c2-actions:not(:has(button)),.lab-actions:has(>strong:empty):not(:has(button)){display:none}
+.game>.c2-actions,.game>.lab-actions{position:absolute;z-index:12;left:12px;right:12px;bottom:78px;max-height:34%;overflow-y:auto;min-height:0;background:#172b3bf2;border:1px solid #60798a;border-radius:10px;box-shadow:0 5px 22px #0005}
+.game.c2-game .c2-stage>.c2-speech{bottom:calc(var(--b0-actions-height,0px) + 28px)}
+.lab-game:has(.lab-actions button) .lab-dpad{bottom:calc(var(--b0-actions-height,0px) + 30px)}
+.b0-menu-list{display:grid;gap:9px}.b0-menu-list>button{min-height:44px;text-align:left;width:100%;padding:10px 14px;border-radius:8px}
+.b0-settings{margin-top:16px;border-top:1px solid #526a78;padding-top:8px}.b0-settings>summary{min-height:44px;line-height:44px;font-size:13px;color:#b6cbd7;cursor:pointer}
+.b0-common-modal{width:min(520px,calc(100vw - 24px));max-height:88dvh;padding:0;background:#172b3b;color:#edf5f8;border:1px solid #60798a;border-radius:12px;box-shadow:0 12px 60px #0008}
+.b0-common-modal::backdrop{background:#061420bb}.b0-common-modal>header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#101e2b;position:sticky;top:0;border-bottom:1px solid #405766}
+.b0-common-modal h2{font-size:17px;margin:0;font-weight:500}.b0-modal-body{padding:18px;font-size:14px;line-height:1.7}.b0-common-modal button{min-height:44px}.b0-help,.b0-items{padding-left:20px}.b0-help li{margin-bottom:14px}.b0-help p,.b0-items p{margin:4px 0 0}
+.lab-stage .lab-dpad{position:absolute;left:12px;bottom:12px;z-index:4;gap:5px;display:flex;flex-wrap:nowrap}.lab-stage .lab-dpad button{min-width:44px;min-height:44px;font-size:12px;padding:6px 9px;background:#102533ed}.lab-notice{bottom:70px}
+.lab-game>footer{display:flex;justify-content:space-between;min-height:66px}.lab-pocket>button{font-size:13px}.lab-pocket [data-lab=downstairs]{font-size:12px}
+.lab-barrier{transform:translate3d(0,0,220px)}.lab-barrier.raised{transform:translate3d(0,-490px,220px)}
+.map-board .lab-map>svg{height:165px}.lab-map .map-floor-label{font-weight:600}
+@media(max-width:420px){.game>header.b0-hud,.awakening>.b0-hud{padding:0 8px}.b0-hud-tools{grid-template-columns:80px minmax(0,1fr) minmax(0,1fr);gap:5px}.game>.b0-hud button,.awakening>.b0-hud button{font-size:11px;padding:5px 8px}.b0-hud-main h1{font-size:12px}.game>.b0-hud .lesson-jump,.awakening>.b0-hud .lesson-jump{font-size:10px!important}.game>footer{padding:10px 8px}.game>footer button{font-size:12px;padding:8px 10px}}

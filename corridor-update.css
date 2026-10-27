@@ -1,0 +1,55 @@
+/* The hallway remains lit until the player steps on the loose floor cover. */
+.lab-wall,.lab-upper-wall,.lab-stair-side,.lab-end,.lab-upper-end,.lab-stair-surround{background-image:linear-gradient(#07131b44,#08121c77),url('./assets/sf-corridor-wall-v2.webp')}
+.lab-stage:after{opacity:0;transition:opacity 2.8s ease}
+.lab-stage:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:#02061155;opacity:0;transition:opacity 2.8s ease}
+.lab-stage.power-out:before,.lab-stage.power-out:after{opacity:1}
+.lab-wall-light{opacity:1;background:#d6f4ee;box-shadow:0 0 28px #a4e9f0aa;transition:opacity 2.3s ease,background-color 2.3s ease,box-shadow 2.3s ease}
+.power-out .lab-wall-light{opacity:.12;background:#9b7870;box-shadow:0 0 4px #ae796322}
+.lab-trip-panel{position:absolute;left:-55px;top:-60px;width:110px;height:120px;transform:translate3d(0,178px,-65px) rotateX(90deg);background:repeating-linear-gradient(90deg,#414b50 0 22px,#29363e 23px 25px);border:3px solid #71828c;box-shadow:3px 2px 0 #02081099;pointer-events:none}
+.lab-trip-panel:after{content:'';position:absolute;left:76px;top:-30px;width:5px;height:60px;border-left:3px solid #776e52;border-radius:45%;transform:rotate(-20deg)}
+.lab-trip-panel.tripped{background-color:#25313b;border-color:#52636a}
+.lab-stage{cursor:grab;overflow:clip}.lab-stage:active{cursor:grabbing}.lab-floor,.lab-upper-floor{cursor:crosshair}
+.lab-notice{padding:0;border:0;background:transparent;box-shadow:none;bottom:calc(var(--b0-actions-height,0px) + 85px);left:16px;right:16px;z-index:5}
+.lab-notice .speech{font-family:inherit;font-size:14px;pointer-events:none}.lab-notice .speech p{margin:0}.lab-notice .speech.system{max-width:90%}
+.lab-notice .speech.system b{text-align:center}.lab-notice .speech.robot{margin-left:auto;margin-right:0}.lab-notice .speech.student{margin-left:0;margin-right:auto}
+.lab-notice .speech.robot p{background:#b9e8f6;color:#123548}
+.lab-notice .speech.system p{background:rgba(4,13,21,.88);font-family:'B0 Digital',monospace;color:#f1fcff;border:1px solid #d3edff50;border-radius:2px}
+.lab-notice .speech.system b{font-family:'B0 Digital',monospace;color:#e8cf9e}
+.lab-game .lab-dpad{z-index:6}
+.leaving-room>header{opacity:1!important;z-index:40}
+/* An open stairwell. Only its authorization field pushes the player back. */
+.lab-stair-entry{position:absolute;left:-260px;top:-290px;width:520px;height:470px;transform:translateZ(-1808px);transform-style:preserve-3d;cursor:pointer;background:transparent;border:0}
+.lab-stair-entry>span{position:absolute;left:145px;right:145px;top:5px;padding:6px 8px;font-size:13px;text-align:center;white-space:nowrap;color:#d9e5db;background:#0a1725c9;border-block:1px solid #9aa48f66}
+.lab-stair-field{position:absolute;inset:0;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,#d2a36c26 0 2px,transparent 2px 22px),radial-gradient(ellipse,#c99a5b44,transparent 70%);border-bottom:3px solid #dfbb83;transition:opacity .18s ease}
+.stair-repel .lab-stair-field{opacity:1}
+.lab-stair-control{position:absolute;left:-34px;top:5px;width:68px;height:88px;transform:translate3d(-266px,0,-1740px) rotateY(90deg);border:4px solid #61727c;background:#132b3d url('./assets/chapter2-metal-v1.webp') center/110px;box-shadow:inset 0 0 8px #0009;cursor:pointer;backface-visibility:hidden}
+.lab-stair-control span{position:absolute;left:6px;top:5px;font-size:13px;color:#d5dddf}.lab-stair-control i{position:absolute;left:22px;top:31px;width:8px;height:20px;background:#0a121a;border:2px solid #a09277}.lab-stair-control b{position:absolute;bottom:4px;left:8px;right:8px;font-size:10px;font-weight:400;text-align:center;color:#d7b57c}
+.lab-stair-control.authorized b{color:#a8ead9}.lab-step{border-color:#95b9bf;box-shadow:0 -1px 3px #85bed84d}
+@media(prefers-reduced-motion:reduce){.lab-stage:before,.lab-stage:after,.lab-wall-light{transition:none}}
+
+/* Match the slate metal hallway seen through the practice-room doorway. */
+.lab-wall,.lab-upper-wall,.lab-stair-side,.lab-end,.lab-upper-end{background-color:#71828b;background-image:linear-gradient(90deg,#c2c9c41a,#1c354522),url('./assets/chapter2-metal-v1.webp');background-size:300px 470px;border-color:#77858b;box-shadow:inset 0 -6px #25343d,inset 0 0 24px #243a4433}
+.lab-wall:before,.lab-upper-wall:before{content:'';position:absolute;left:9px;top:0;bottom:0;width:11px;border-inline:2px solid #a6aea8;background:linear-gradient(90deg,#273d48,#7f8c90,#334652);box-shadow:4px 0 4px #101d2466;pointer-events:none}
+.lab-pipe{top:8px;height:8px;filter:none;background:linear-gradient(#9ca9aa,#263c49);border-color:#526571;box-shadow:0 3px 2px #07152288}
+.lab-ceiling,.lab-upper-ceiling{background:repeating-linear-gradient(0deg,transparent 0 258px,#344854aa 259px 262px,transparent 263px 300px),linear-gradient(#3b536733,#84939b11),url('./assets/chapter2-metal-v1.webp') center/300px;box-shadow:inset 0 0 30px #20333e66}
+.lab-floor,.lab-upper-floor{background:repeating-linear-gradient(0deg,transparent 0 149px,#243d4d88 150px 152px),repeating-linear-gradient(90deg,transparent 0 178px,#a2b2b577 179px 181px),linear-gradient(#afc8cc33,#5e7d9022),url('./assets/chapter2-metal-v1.webp') center/300px;box-shadow:inset 0 0 30px #1b374633}
+.lab-door-leaf{background-image:linear-gradient(#28475b44,#142a3e55),url('./assets/chapter2-metal-v1.webp');border-color:#8e9ba1}
+.lab-door{border-color:#526675;box-shadow:0 0 0 3px #b7c0bc,inset 0 0 12px #142b3b88}
+.lab-door-sign{border-color:#8a9a9f;background:#1a3041;color:#e1e9e9}
+.lab-fluorescent{position:absolute;left:-29px;top:-66px;width:58px;height:132px;border:5px solid #647881;background:linear-gradient(90deg,#233643,#a0acac 10%,#334e5c 17% 83%,#a0acac 90%,#233643);box-shadow:0 0 0 2px #263d49,0 0 28px 10px #9de7f444;backface-visibility:hidden;pointer-events:none;transition:box-shadow .7s ease}
+.lab-fluorescent>i{position:absolute;inset:6px 10px;border:2px solid #d1f7fb;background:linear-gradient(90deg,#a7e9f3,#f2ffff 38% 62%,#a7e9f3);box-shadow:0 0 12px #b7f7ff;opacity:1;transition:opacity .8s ease,box-shadow .8s ease;transition-delay:calc(var(--light-order,0)*.065s)}
+.lab-ceiling-conduit{position:absolute;left:-22px;top:-1080px;width:44px;height:2160px;pointer-events:none;backface-visibility:hidden;background:repeating-linear-gradient(90deg,#172c39 0 4px,#8d9ca2 5px 7px,#334d5e 8px 11px);border-inline:3px solid #233e50;box-shadow:4px 0 4px #08142077}
+.lab-light-pool{position:absolute;left:-75px;top:-115px;width:150px;height:230px;background:radial-gradient(ellipse,#c5faff66,transparent 68%);pointer-events:none;backface-visibility:hidden;opacity:1;transition:opacity 1.1s ease}
+.lab-wall-light{opacity:0;background:#d4a16c;box-shadow:none;transition:opacity 1.3s ease}
+.power-out .lab-fluorescent{box-shadow:0 0 0 2px #263d49}
+.power-out .lab-fluorescent>i{opacity:.035;box-shadow:none}
+.power-out .lab-light-pool{opacity:0}
+.power-out .lab-wall-light{opacity:.2;background:#d4a16c;box-shadow:0 0 5px #d4a16c33}
+.lab-trip-panel{left:-55px;top:-60px;width:110px;height:120px;background:repeating-linear-gradient(90deg,#65757d 0 22px,#41545f 23px 25px);border-color:#9aa8ac;box-shadow:3px 2px 0 #02081099}
+@media(prefers-reduced-motion:reduce){.lab-fluorescent,.lab-fluorescent>i,.lab-light-pool{transition:none}}
+
+/* Corridor cutaways share the power state; characters and speech stay readable. */
+#app[data-corridor-power="out"] :is(.corridor-view,.corridor-transition,.c3-exit-space,.mr-passage){filter:brightness(.38) saturate(.75)}
+#app[data-corridor-power="out"] .c2-window-glass{background-image:linear-gradient(#020611b0,#020611b0),url('./assets/lab-corridor-v1.webp')}
+#app[data-corridor-power="out"] :is(.c2-window.open,.c2-outside,.c3-world .c3-observation-frame){background-image:linear-gradient(#020611aa,#020611aa),url('./assets/lab-corridor-v1.webp')}
+#app[data-corridor-power="out"] .c4-story-intro .c4-story-scene{background-image:linear-gradient(#020611aa,#020611aa),url('./assets/lab-corridor-v1.webp')}

@@ -1,0 +1,11 @@
+/* 600 → 1170 units: textures and furniture retain their original size. */
+.c2-world>.c2-wall{width:1170px;left:-585px}
+.c2-world>.c2-wall-front{transform:translateZ(-585px)}
+.c2-world>.c2-wall-back{transform:rotateY(180deg) translateZ(-585px)}
+.c2-world>.c2-wall-left{transform:rotateY(90deg) translateZ(-585px)}
+.c2-world>.c2-wall-right{transform:rotateY(-90deg) translateZ(-585px)}
+.c2-world>.c2-floor,.c2-world>.c2-ceiling{width:1170px;height:1170px;left:-585px;top:-585px}
+.c2-world .c2-light{left:calc(50% - 85px)}
+.c4-world .c2-light{left:calc(50% - 105px)}
+.mr-glass{left:-585px;width:1170px}
+.mr-glass-rail{left:-585px;width:1170px}

@@ -1,0 +1,73 @@
+/* Approved SF room family. Artwork and architecture change; puzzle coordinates do not. */
+.sf-cargo-world>.c2-wall{height:650px;top:-470px;border:5px solid #252e37;background:#3d4246 url('./assets/sf-cargo-wall-v1.webp') center/390px 650px;box-shadow:inset 0 0 65px #10151c77}
+.sf-cargo-world>.c2-ceiling{transform:translateY(-470px) rotateX(-90deg);background:repeating-linear-gradient(90deg,#141d22bb 0 32px,#68707877 33px 38px,#1c252bbb 39px 78px),url('./assets/chapter2-metal-v1.webp') center/300px;filter:none}
+.sf-cargo-world>.c2-floor{background:repeating-linear-gradient(0deg,transparent 0 129px,#111b2488 130px 132px),repeating-linear-gradient(90deg,transparent 0 129px,#111b2488 130px 132px),linear-gradient(#625b4544,#161e2b55),url('./assets/chapter2-metal-v1.webp') center/390px;border-color:#333b3f;box-shadow:inset 0 0 90px #171e2588}
+.sf-cargo-world .c2-light{top:55px;width:145px;left:calc(50% - 72px);height:15px;background:#f1cb8d;border-color:#554734;box-shadow:0 4px 28px #edb35a80}
+.sf-cargo-world>.c2-wall:after{content:'';position:absolute;left:0;right:0;bottom:18px;height:25px;background:repeating-linear-gradient(130deg,#b69748bb 0 18px,#1e2932dd 19px 37px);border-block:3px solid #252e33;pointer-events:none}
+.sf-cargo-world .c2-window{border-color:#5b5140;box-shadow:0 0 0 3px #b89b60,inset 0 0 12px #000}
+.sf-cargo-world .c2-face{background-image:linear-gradient(#9b805733,#3d3b3833),url('./assets/chapter2-metal-v1.webp');border-color:#514b3d}
+.sf-cargo-world .c2-face:before,.sf-cargo-world .c2-face:after{background:#b49a57;box-shadow:inset 1px 0 #e0c58d,inset -2px 0 #4f4635}
+.sf-cargo-world .c2-entry{border-color:#5d513c;box-shadow:inset 0 0 0 3px #958264,inset 0 0 20px #101c2d}
+.sf-cargo-gantry{position:absolute;left:-285px;top:-290px;width:570px;height:32px;transform:translateZ(-245px);transform-style:preserve-3d;pointer-events:none;background:linear-gradient(#b79a50cc,#796034dd),url('./assets/chapter2-metal-v1.webp') center/210px;border:5px solid #4b4130;box-shadow:inset 0 3px #d6ba72}
+.sf-cargo-gantry>i{position:absolute;left:-30px;top:-12px;width:630px;height:22px;transform:rotateY(90deg) translateZ(260px);background:linear-gradient(#997e46,#3a352b);border:5px solid #33353a}
+.sf-cargo-gantry>i+i{transform:rotateY(90deg) translateZ(-260px)}
+.sf-cargo-gantry>span{position:absolute;left:43%;top:-16px;width:55px;height:55px;border:5px solid #343b3c;background:linear-gradient(#c2a158aa,#735d39dd),url('./assets/chapter2-metal-v1.webp') center/110px;box-shadow:inset 0 0 0 3px #95856a}
+.sf-cargo-gantry>span:before{content:'';position:absolute;top:50px;left:22px;width:6px;height:70px;background:repeating-linear-gradient(#b0a58a 0 3px,#303335 4px 8px)}
+.sf-cargo-gantry>span:after{content:'';position:absolute;top:114px;left:7px;width:28px;height:35px;border:7px solid #9c865b;border-top:0;border-radius:0 0 16px 16px;box-shadow:inset 1px -2px #dbbd79}
+
+/* Access control: green enamel, brass rails and amber equipment. */
+.c3-world>.c2-wall{background:#4b5649 url('./assets/sf-access-wall-v1.webp') center/780px 420px;box-shadow:inset 0 0 50px #101d1680,inset 0 -6px #202b24}
+.c3-world>.c2-floor{background:repeating-linear-gradient(0deg,transparent 0 119px,#191f2188 120px 122px),repeating-linear-gradient(90deg,transparent 0 119px,#191f2188 120px 122px),linear-gradient(#8b795247,#283b3280),url('./assets/chapter2-metal-v1.webp') center/390px;box-shadow:inset 0 0 80px #131c1788}
+.c3-world>.c2-ceiling{background:repeating-linear-gradient(90deg,#1b302ccc 0 90px,#ad946955 91px 94px,#192e2bcc 95px 180px),url('./assets/sf-access-wall-v1.webp') center/390px;box-shadow:inset 0 0 65px #0a171299}
+.c3-world .c2-light{width:130px;left:calc(50% - 65px);background:#f3cc8d;border-color:#66563d;box-shadow:0 5px 28px #d8a34e77}
+.c3-world .c3-conduit{background:linear-gradient(#25352e,#a58c58 35%,#716643 70%,#24342d);border-color:#1e3228}
+.c3-world .c3-room-plaque{background:#1d372ee8;border-color:#968159;color:#e1d2ab}
+.c3-world .c3-room-plaque small{color:#b8ad87}
+.c3-world .c3-desk-cube .c2-face,.c3-world .c3-shelf .c2-face{background:linear-gradient(#27503aa8,#172c23bb),url('./assets/chapter2-metal-v1.webp') center/180px;border-color:#6d6348;box-shadow:inset 0 0 0 1px #9a8a62,inset 0 0 15px #12221b88}
+.c3-world .c3-desk-cube .c2-top{background:linear-gradient(#8c815366,#36453777),url('./assets/chapter2-metal-v1.webp') center/180px}
+.c3-world .c3-monitor{filter:sepia(.65) saturate(.85);overflow:visible}
+.c3-world .c3-monitor:after{content:'';display:block;position:absolute;left:33%;right:30%;top:25%;height:30%;border-radius:2px;background:repeating-linear-gradient(0deg,transparent 0 5px,#f6d59255 6px 7px),radial-gradient(ellipse,#d4a45e,#594320);box-shadow:inset 0 0 7px #302a1d,0 0 15px #e7a94d66;opacity:.85;pointer-events:none}
+.c3-world .c3-observation-frame{border-image:none;border-color:#4b594c;background:linear-gradient(140deg,#bcbda484,#334d47bb),url('./assets/lab-corridor-v1.webp') center/cover;box-shadow:0 0 0 3px #a38f65,inset 0 0 30px #0c211c}
+.c3-world .c3-record-window{background-color:#263a2c;border-color:#847752}
+.sf-archive-console{position:absolute;left:-235px;top:-50px;width:470px;height:175px;transform:translateZ(289px) rotateY(180deg);border:9px solid #4d5743;border-radius:30px 30px 6px 6px;background:linear-gradient(#31513bd9,#1b3428f0),url('./assets/chapter2-metal-v1.webp') center/240px;box-shadow:inset 0 0 0 3px #a08b5d,0 12px 0 #172a22;pointer-events:none}
+.sf-archive-console>i{display:inline-block;width:102px;height:70px;margin:19px 14px;background:repeating-linear-gradient(0deg,#e4b76a22 0 3px,#533c1c55 4px 5px),radial-gradient(ellipse,#916e2d,#2c2b1d);border:7px solid #82724e;border-radius:10px;box-shadow:0 0 12px #e4ab4322,inset 0 0 15px #151b14}
+.sf-archive-console:after{content:'';position:absolute;left:30px;right:30px;bottom:15px;height:15px;background:repeating-linear-gradient(90deg,#a8915a 0 8px,#283d2d 9px 20px);opacity:.7}
+
+/* Optical chamber: transparent separation remains the real moving puzzle partition. */
+.mr-world>.c2-wall{background:#40637a url('./assets/sf-optical-wall-v1.webp') center/780px 420px;border:2px solid #4e7488;box-shadow:inset 0 0 45px #0b1e3a66}
+.mr-world>.c2-floor{background:linear-gradient(90deg,transparent 49.6%,#b4ddf18c 49.7% 50.3%,transparent 50.4%),repeating-linear-gradient(90deg,transparent 0 129px,#8baac23b 130px 131px),repeating-linear-gradient(0deg,transparent 0 129px,#8baac23b 130px 131px),radial-gradient(ellipse at 70% 55%,#6179b555,transparent 60%),linear-gradient(#233e5899,#15293fbb),url('./assets/chapter2-metal-v1.webp') center/780px;box-shadow:inset 0 0 80px #10243d99}
+.mr-world>.c2-ceiling{background:repeating-linear-gradient(90deg,#152e49aa 0 125px,#86c9dd77 126px 129px,#152e49aa 130px 260px),url('./assets/sf-optical-wall-v1.webp') center/390px;filter:none}
+.mr-world .c2-light{background:#b6e4fa;box-shadow:0 4px 24px #8ae0ff99;border-color:#466481}
+.mr-world .mr-glass{border-image:none;border:7px solid #426c83;border-bottom-color:#71abc3;box-shadow:inset 0 0 25px #85c9e11c,0 0 0 2px #9adcf255;background:linear-gradient(114deg,transparent 15%,#b8e7ff10 16% 18%,transparent 19% 70%,#c4d0fc16 71% 73%,transparent 74%),linear-gradient(#86b9dc09,#415e8712 80%,#93c5ee20)}
+.mr-world .mr-glass-edge{background:linear-gradient(90deg,#a3eeffb0,#4483ae66);box-shadow:0 0 13px #67d0ff66;border-color:#d0f1ff}
+.mr-world .mr-glass-rail{background:linear-gradient(#6ba8be,#223d59);border-color:#3c7797;box-shadow:0 0 12px #5ccae344}
+.mr-world .mr-control-panel:before{background:linear-gradient(#1a3c5bbb,#0c233eee),url('./assets/sf-optical-wall-v1.webp') center/285px;border-color:#557b93;box-shadow:inset 0 0 0 1px #b0dce7,0 0 0 2px #243b54,0 5px 6px #08182e}
+.mr-world .mr-room-sign{background:#153b52e8;border-color:#6795ab}
+.sf-optical-apparatus{position:absolute;left:-115px;top:-197px;width:230px;height:340px;transform:translate3d(130px,0,293px) rotateY(180deg);border:10px solid #4f6b84;border-radius:100px 100px 25px 25px;background:linear-gradient(90deg,#253650bb,#45668833,#253650bb),url('./assets/sf-optical-wall-v1.webp') center/290px;box-shadow:inset 0 0 0 3px #8fbed0,inset 0 0 45px #6287d144;pointer-events:none}
+.sf-optical-apparatus:before{content:'';position:absolute;inset:27px 26px 105px;border:14px solid #343b57;border-radius:50%;box-shadow:0 0 0 3px #8d8eb7,inset 0 0 0 3px #aeade7,inset 0 0 35px #9c95ec55,0 0 22px #6c80d355;background:radial-gradient(circle,#151e3780,#4c70a633 60%,#c2caff88)}
+.sf-optical-apparatus:after{content:'';position:absolute;left:46px;right:46px;bottom:33px;height:24px;border:4px solid #718caf;background:linear-gradient(#89cae588,#395b8c55);box-shadow:0 0 20px #b8b1f044}
+.mr-world.mr-dim .sf-optical-apparatus{filter:brightness(.55)}
+
+/* AXIOM: a monumental upper volume, suspended core and illuminated floor ring. */
+.c4-world>.c2-wall{height:720px;top:-540px;background-size:780px 720px;border:4px solid #4d4940;box-shadow:inset 0 0 65px #070d2077}
+.c4-world>.c2-ceiling{transform:translateY(-540px) rotateX(-90deg);background:radial-gradient(circle,#b8c8d388 0 22%,#29394d99 23% 29%,#a58d5cbb 29.5% 30%,#15233799 30.5% 48%,#716044bb 49% 50%,#101e3099 51%),url('./assets/chapter4-navy-wall-v1.webp') center/390px;filter:none}
+.c4-world .c4-wall-ribs{background:repeating-linear-gradient(90deg,transparent 0 174px,#8a744677 175px 184px,#e8cb8244 185px 188px,transparent 189px 195px)}
+.c4-world .c2-light{top:45px;width:17px;height:560px;left:calc(50% - 8px);border:5px solid #756347;background:#f1ddad;box-shadow:0 0 30px #f3cc7d66}
+.c4-world>.c2-floor{background:repeating-linear-gradient(90deg,transparent 0 129px,#b4a57d44 130px 131px),repeating-linear-gradient(0deg,transparent 0 129px,#b4a57d44 130px 131px),linear-gradient(#26384a66,#14243c99),url('./assets/chapter2-metal-v1.webp') center/520px;box-shadow:inset 0 0 100px #040a1677}
+.c4-world .c4-main-screen{left:-260px;top:-510px;width:520px;height:600px;transform:translateZ(-210px);border:0;border-radius:0;background:transparent!important;box-shadow:none!important;overflow:visible}
+.c4-core-art{position:absolute;inset:0 0 auto;width:100%;height:520px;object-fit:contain;pointer-events:none;filter:drop-shadow(0 0 14px #e2ac5233);transition:filter .8s,opacity .8s}
+.c4-main-screen .c4-emblem{display:none}
+.c4-main-screen>strong{position:absolute;left:0;right:0;bottom:54px;font-size:24px;letter-spacing:.3em;color:var(--axiom-color)}
+.c4-main-screen>.c4-main-status{position:absolute;left:0;right:0;bottom:25px;font-size:12px;margin:0;color:#d8c8a7}
+.c4-main-screen>small{position:absolute;left:0;right:0;bottom:7px;font-size:8px;color:#b5ab93}
+.c4-main-screen>.c4-math{display:none}
+.c4-main-screen>.c4-screen-grid{inset:0;border-radius:50%;pointer-events:none}
+.c4-world .c4-desk-shell{background:linear-gradient(#77694b88,#1b2e3ccc),url('./assets/chapter2-metal-v1.webp') center/200px;border-color:#88754d}
+.c4-world .c4-ceiling-ring{display:block;left:-235px;top:-235px;width:470px;height:470px;transform:translate3d(0,178px,-90px) rotateX(90deg);border:9px solid #b7a478;border-radius:50%;background:radial-gradient(circle,transparent 0 62%,#f1dc9b66 63% 64%,transparent 65%);box-shadow:0 0 0 4px #3e484c,inset 0 0 18px #f1d49599,0 0 24px #f0c97666;pointer-events:none}
+.c4-stage[data-axiom="locked"] .c4-core-art{filter:drop-shadow(0 0 22px #d67d4c66)}
+.c4-stage[data-axiom="severed"] .c4-core-art{filter:drop-shadow(0 0 22px #e65b4f88) saturate(1.2)}
+.c4-stage[data-axiom="critical"] .c4-core-art,.c4-stage[data-axiom="override"] .c4-core-art{filter:drop-shadow(0 0 25px #fc6850aa) saturate(1.3)}
+.c4-stage[data-axiom="critical"] .c4-ceiling-ring,.c4-stage[data-axiom="override"] .c4-ceiling-ring{box-shadow:0 0 0 4px #493039,inset 0 0 18px #e16f5e88,0 0 25px #e16f5e55;border-color:#b28068}
+.c4-stage[data-axiom="released"] .c4-core-art{filter:brightness(.7) saturate(.35);opacity:.8}
+.c4-stage[data-axiom="released"] .c4-ceiling-ring{border-color:#cfdbb6;box-shadow:0 0 0 4px #405450,inset 0 0 18px #d1f0ceaa,0 0 25px #dbefbe77}
+@media(prefers-reduced-motion:reduce){.c4-core-art{transition:none}}
